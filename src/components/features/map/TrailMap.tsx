@@ -41,14 +41,14 @@ export default function TrailMap() {
     });
 
     const geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
+      accessToken: mapboxgl.accessToken || "",
+      mapboxgl: mapboxgl as any,
       marker: false,
       placeholder: "Search for places",
     });
 
     geocoder.on("result", (e) => {
-      const center = e.result.center;
+      const center = e.result.center as [number, number];
       if (selectionRef.current) {
         originRef.current = center;
         setOriginName(e.result.place_name);

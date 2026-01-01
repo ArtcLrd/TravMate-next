@@ -14,7 +14,7 @@ export default function Home() {
     setZoom(true);
     // Wait for animation then navigate
     setTimeout(() => {
-      router.push("/map/state/Maharashtra"); // New Route!
+      router.push("/map/maharashtra");
     }, 1500);
   };
 
