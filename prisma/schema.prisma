@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  username String
+  password String
+}
+
+model stateinfo {
+  id            Int     @id @default(autoincrement())
+  statename     String  @unique
+  description   String
+  svg           String
+  locations     locationpopupinfo[]  // New relation field
+}
+
+model locationpopupinfo {
+  id            Int     @id @default(autoincrement())
+  locationname  String
+  statename     String  // Keeping your existing field
+  state         stateinfo @relation(fields: [statename], references: [statename])  // Relation using statename
+  coords        String
+}

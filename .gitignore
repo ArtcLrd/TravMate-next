@@ -1,0 +1,90 @@
+# ------------------------------------------------------------------------------
+# DEPENDENCIES
+# ------------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+pnpm-lock.yaml
+
+# ------------------------------------------------------------------------------
+# NEXT.JS & VERCEL
+# ------------------------------------------------------------------------------
+# Next.js build output
+.next/
+out/
+
+# Vercel Project config
+.vercel/
+
+# Next.js TypeScript definition file (auto-generated)
+next-env.d.ts
+
+# ------------------------------------------------------------------------------
+# REACT & VITE (If you still have legacy files)
+# ------------------------------------------------------------------------------
+build/
+dist/
+build-ssr/
+*.tsbuildinfo
+
+# ------------------------------------------------------------------------------
+# ENVIRONMENT VARIABLES (CRITICAL)
+# ------------------------------------------------------------------------------
+# Ignore all .env files by default to protect secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Allow .env.example so teammates know what keys are needed
+!.env.example
+
+# ------------------------------------------------------------------------------
+# LOGS
+# ------------------------------------------------------------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs
+*.log
+
+# ------------------------------------------------------------------------------
+# TESTING & COVERAGE
+# ------------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
+cypress/videos
+cypress/screenshots
+
+# ------------------------------------------------------------------------------
+# IDE & EDITOR FILES
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# DATABASE & BACKEND (Prisma/Supabase)
+# ------------------------------------------------------------------------------
+# SQLite database (if used locally for testing)
+*.db
+*.db-journal
+/prisma/*.db
+/prisma/*.db-journal
+
+# ------------------------------------------------------------------------------
+# PUBLIC ASSETS (Optional)
+# ------------------------------------------------------------------------------
+# If you have large public assets you don't want in git:
+# public/assets/large-videos/
